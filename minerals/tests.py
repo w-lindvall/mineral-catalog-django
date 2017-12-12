@@ -6,7 +6,7 @@ from .models import Mineral
 
 class MineralModelTest(TestCase):
     def test_mineral_model(self):
-        '''Test creation of mineral object'''
+        """Test creation of mineral object"""
         mineral = Mineral.objects.create(
             name='Test Mineral',
             category='Category',
@@ -32,7 +32,7 @@ class MineralViewTest(TestCase):
         )
 
     def test_home_page_view(self):
-        '''Test home page view'''
+        """Test home page view"""
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         self.assertIn(self.mineral, response.context['minerals'])
@@ -42,7 +42,7 @@ class MineralViewTest(TestCase):
         self.assertIn(self.mineral2, response.context['minerals'])
 
     def test_detail_view(self):
-        '''Test detail view'''
+        """Test detail view"""
         response = self.client.get(reverse('detail',
                                            kwargs={'pk': self.mineral.pk}))
         self.assertEqual(response.status_code, 200)
