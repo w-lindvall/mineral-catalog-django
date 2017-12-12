@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Mineral(models.Model):
-    '''Class defines mineral object (with optional fields)'''
+    """Class defines mineral object (with optional fields)"""
     name = models.CharField(max_length=255)
     image_filename = models.CharField(max_length=255, blank=True)
     image_caption = models.CharField(max_length=255, blank=True)
